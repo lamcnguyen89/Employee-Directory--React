@@ -4,7 +4,9 @@ import DataArea from "./DataArea";
 class Main extends Component {
     state = {  }
     render() { 
-        return (  );
+        return ( 
+            <DataArea />
+         );
     }
 }
  
