@@ -1,6 +1,6 @@
 import React from "react";
 
-function DataBody({ users}) {
+function Columns({ users}) {
 
     return (
         <tbody>
@@ -40,4 +40,4 @@ function DataBody({ users}) {
 
 }
 
-export default DataBody;
+export default Columns;

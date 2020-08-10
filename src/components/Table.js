@@ -1,7 +1,7 @@
 import React from "react";
-import DataBody from "./DataBody";
+import Columns from "./Columns";
 
-function DataTable({ headings, users}) {
+function Table({ headings, users}) {
     return (
       <div className="datatable mt-5">
         <table
@@ -25,11 +25,11 @@ function DataTable({ headings, users}) {
             </tr>
           </thead>
   
-          <DataBody users={users} />
+          <Columns users={users} />
         </table>
       </div>
     );
   }
   
-  export default DataTable;
+  export default Table;
 

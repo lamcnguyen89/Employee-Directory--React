@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Main from "./components/Main";
+import Body from "./components/Body";
 import Wrapper from  "./components/Wrapper";
-import Header from "./components/Header"
+import Heading from "./components/Heading"
 
 
 class App extends Component {
@@ -11,8 +11,8 @@ class App extends Component {
 
       <div>
         <Wrapper>
-          <Header />
-          <Main />
+          <Heading />
+          <Body />
         </Wrapper>
       </div>
     );

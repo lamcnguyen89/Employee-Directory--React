@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import Data from "./Data";
 
-class Header extends Component {
+class Body extends Component {
     state = {  }
     render() { 
         return ( 
-            <h1>Employee Directory</h1>
+            <Data />
          );
     }
 }
  
-export default Header;
+export default Body;

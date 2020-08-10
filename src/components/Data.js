@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import DataTable from "./DataTable";
+import Table from "./Table";
 import NavBar from "./NavBar";
 import API from "../utils/API";
 
 
-class DataArea extends Component {
+class Data extends Component {
 
     // The constructor is a method that’s automatically called during the creation of an object from a class. 
     // It can handle your initial setup stuff like defaulting some properties of the object, or sanity checking the arguments that were passed in. 
@@ -45,7 +45,7 @@ class DataArea extends Component {
             
             <div>
                 <NavBar />
-                <DataTable
+                <Table
                     headings={this.state.headings}
                     users={this.state.users}
                 />
@@ -55,4 +55,4 @@ class DataArea extends Component {
     }
 }
  
-export default DataArea;
+export default Data;

@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import DataArea from "./DataArea";
 
-class Main extends Component {
+class Heading extends Component {
     state = {  }
     render() { 
         return ( 
-            <DataArea />
+            <h1>Employee Directory</h1>
          );
     }
 }
  
-export default Main;
+export default Heading;
