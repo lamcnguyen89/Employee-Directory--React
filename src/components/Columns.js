@@ -30,7 +30,7 @@ function Columns({filteredUsers}) {
                     </a>
                   </td>
                   <td data-th="Birthday">
-                     {dob.date}
+                     {dob.date.split("T")[0]}
                   </td>
                 </tr>
               );
