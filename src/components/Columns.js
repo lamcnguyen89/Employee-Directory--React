@@ -16,10 +16,7 @@ function Columns({filteredUsers}) {
                     />
                   </td>
                   <td data-th="Name">
-                      <div>
-                        {name.first} {name.last}
-                      </div>
-                        
+                        {name.first} {name.last}    
                   </td>
                   <td data-th="Phone">
                     {phone}
