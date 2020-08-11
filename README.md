@@ -27,7 +27,7 @@ The Unlicense
 
 ## Deployed Application
 
-View deployed application on Heroku [here](https://dry-retreat-44297.herokuapp.com/)
+View deployed application [here](https://lamcnguyen89.github.io/Employee-Directory--React/)
 
 ![Screenshot](./public/Screenshot.PNG)
 
