@@ -15,13 +15,27 @@ class Data extends Component {
         super();
         this.state = {
             users: [{}],
+            filteredUsers: [{}],
             headings: [
                 {columnName: "Image", columnWidth: "20%"},
                 {columnName: "Name", columnWidth: "20%"},
                 {columnName: "Phone", columnWidth: "20%"},
                 {columnName: "Email", columnWidth: "20%"},
-                {columnName: "Birth Date", columnWidth: "20%"}
-            ]
+                {columnName: "Birth Day", columnWidth: "20%"}
+            ],
+
+            searchEmployees: event => {
+                const filter = event.target.value;
+                const filteredList = this.state.users.filter(item => {
+                    // merge data together, then see if user input is anywhere inside
+                    let values = Object.values(item)
+                      .join("")
+                      .toLowerCase();
+                    return values.indexOf(filter.toLowerCase()) !== -1;
+                });
+                this.setState({ filteredUsers: filteredList });
+            }
+            
         }
     }
 
@@ -32,9 +46,10 @@ class Data extends Component {
     // Source: https://stackoverflow.com/questions/31556450/what-is-mounting-in-react-js
     componentDidMount() {
         API.callUsers()
-            .then(results => {
+            .then(randomUsers => {
                 this.setState({
-                    users: results.data.results
+                    users: randomUsers.data.results,
+                    filteredUsers: randomUsers.data.results
                 })
             })
     };
@@ -44,7 +59,9 @@ class Data extends Component {
         return (  
             
             <div>
-                <NavBar />
+                <NavBar 
+                    searchEmployees={this.state.searchEmployees} 
+                />
                 <Table
                     headings={this.state.headings}
                     users={this.state.users}

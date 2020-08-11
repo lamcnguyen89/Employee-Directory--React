@@ -1,7 +1,7 @@
 import React from "react";
 import Columns from "./Columns";
 
-function Table({ headings, users}) {
+function Table({headings, users}) {
     return (
       <div className="datatable mt-5">
         <table
@@ -10,14 +10,14 @@ function Table({ headings, users}) {
         >
           <thead>
             <tr>
-              {headings.map(({ name, width }) => {
+              {headings.map(({ columnName, columnWidth }) => {
                 return (
                   <th
                     className="col"
-                    key={name}
-                    style={{ width }}
+                    key={columnName}
+                    style={{ columnWidth }}
                   >
-                    {name}
+                    {columnName}
                     <span className="pointer"></span>
                   </th>
                 );

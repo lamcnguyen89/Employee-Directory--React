@@ -3,7 +3,7 @@ import React from "react";
 // This compnonent is purely a search bar created from a bootstrap template.
 // Source for Code: https://mdbootstrap.com/docs/jquery/forms/search/
 
-function SearchBar({}) {
+function SearchBar({searchEmployees}) {
     return(
         <div className="searchComponent">
                 <form className="form-inline mr-auto">
@@ -12,6 +12,7 @@ function SearchBar({}) {
                         type="text" 
                         placeholder="Search by Name" 
                         aria-label="Search by Name"
+                        onChange={ event => searchEmployees(event)}
                     />
                     <button className="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="submit">
                         Search 
