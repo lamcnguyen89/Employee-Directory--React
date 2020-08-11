@@ -1,31 +1,29 @@
 import React from "react";
 import Columns from "./Columns";
 
-function Table({headings, users}) {
+function Table({headings, filteredUsers}) {
     return (
-      <div className="datatable mt-5">
+      <div className="table">
         <table
           id="table"
-          className="table table-striped table-hover table-condensed"
+          className="table"
         >
           <thead>
             <tr>
-              {headings.map(({ columnName, columnWidth }) => {
+              {headings.map(({columnName, columnWidth}) => {
                 return (
                   <th
                     className="col"
                     key={columnName}
-                    style={{ columnWidth }}
+                    style={{columnWidth}}
                   >
                     {columnName}
-                    <span className="pointer"></span>
                   </th>
                 );
               })}
             </tr>
           </thead>
-  
-          <Columns users={users} />
+          <Columns filteredUsers={filteredUsers} />
         </table>
       </div>
     );

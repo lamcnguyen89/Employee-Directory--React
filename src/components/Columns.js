@@ -1,35 +1,35 @@
 import React from "react";
 
-function Columns({users}) {
+function Columns({filteredUsers}) {
 
     return (
         <tbody>
-          {users[0] !== undefined && users[0].name !== undefined ? (
-            users.map(({ login, name, picture, phone, email, dob }) => {
+          {filteredUsers[0] !== undefined && filteredUsers[0].name !== undefined ? (
+            filteredUsers.map(({ login, name, picture, phone, email, dob }) => {
               return (
                 <tr key={login.uuid}>
-                  <td data-th="Image" className="align-middle m-3">
+                  <td data-th="Image">
                     <img
                       src={picture.medium}
                       alt={"profile image for " + name.first + " " + name.last}
                       className="img-responsive"
                     />
                   </td>
-                  <td data-th="Name" className="name-cell align-middle m-3">
-                      <div className="d-flex justify-content-center">
+                  <td data-th="Name">
+                      <div>
                         {name.first} {name.last}
                       </div>
                         
                   </td>
-                  <td data-th="Phone" className="align-middle m-3">
+                  <td data-th="Phone">
                     {phone}
                   </td>
-                  <td data-th="Email" className="align-middle m-3">
+                  <td data-th="Email">
                     <a href={"mailto:" + email} target="__blank">
                       {email}
                     </a>
                   </td>
-                  <td data-th="Birthday" className="align-middle m-3">
+                  <td data-th="Birthday">
                      {dob.date}
                   </td>
                 </tr>

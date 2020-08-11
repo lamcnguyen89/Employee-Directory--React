@@ -26,9 +26,9 @@ class Data extends Component {
 
             searchEmployees: event => {
                 const filter = event.target.value;
-                const filteredList = this.state.users.filter(item => {
+                const filteredList = this.state.users.filter(person => {
                     // merge data together, then see if user input is anywhere inside
-                    let values = Object.values(item)
+                    let values = Object.values(person)
                       .join("")
                       .toLowerCase();
                     return values.indexOf(filter.toLowerCase()) !== -1;
@@ -38,7 +38,6 @@ class Data extends Component {
             
         }
     }
-
 
     // Takes Data called from the RandomUser API and pushes it to an Array of Objects to be displayed.
     // This process of creating instances and DOM nodes corresponding to React components, and inserting them into the DOM, is called mounting.
@@ -64,7 +63,7 @@ class Data extends Component {
                 />
                 <Table
                     headings={this.state.headings}
-                    users={this.state.users}
+                    filteredUsers={this.state.filteredUsers}
                 />
             </div>
             
